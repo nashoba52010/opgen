@@ -271,3 +271,4 @@ dmypy.json
 # Custom
 
 /_build/
+/_env/
