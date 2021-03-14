@@ -12,12 +12,23 @@ def dt_to_cggrt_dt(dt):
 
 class GeneratorCGGRT:
 
-    def __init__(self, proj_dir):
+    def __init__(self, proj_dir, implem):
         self.proj_dir = proj_dir
         self.gen_src_dir = os.path.join(self.proj_dir, 'src/gen')
         self.gen_include_dir = os.path.join(self.proj_dir, 'include/cggrt/gen')
 
+        self.implem = implem
+
     def cgen_op(self, op):
+
+        # find right implementation
+        impl = None
+        for entry in op._impls.values():
+            for impl in entry:
+                print(impl)
+                shhkdfj()
+                self.cgen_impl(op, impl[1])
+        
         # gen all implementations
         for entry in op._impls.values():
             for impl in entry:
